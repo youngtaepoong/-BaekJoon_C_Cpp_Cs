@@ -2,22 +2,24 @@
 
 int main() {
 	
-    int input, cnt = 1;
+    int input, bound = 1, cnt = 0, i = 0;
     scanf("%d", &input);
-
-    for (int i = 1; i < input; i+=6)
-    {
-        if (input > i) cnt+=1;  
-    }
-
-    printf("%d", cnt);
-
-	return 0;
+	
+	if(input == 1) cnt = 1;
+	else
+	{
+		while(input > bound)
+		{
+		bound += (i * 6);
+		cnt++;
+		i++;
+		}
+	}
+	printf("%d", cnt);
 }
 
 /*
- 1 7 19 37 61
+ 1 7 19 37 61 91
  
-  6 12 18 24  Â÷. 
-%6 
+  6 12 18 24 30Â÷. 
 */
