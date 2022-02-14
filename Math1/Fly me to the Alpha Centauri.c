@@ -13,24 +13,24 @@ int main(void)
 		cnt = 0;
 		move = 1;
 		distance = y - x;
-		
-		sex = (distance - 2) % 2;
+
 		
 		while(distance > 0)
 		{
-			distance -= (move*=2);
+			if (distance < move)
+				cnt -= 1;
+			
+			distance -= (move*2);
 			cnt+=2;
 			
-			if (distance <= move)
+			if (distance <= 0)
 			{
-				cnt = (distance % 2 == 0) ? cnt+2 : cnt+1;
+				if (distance == -(move))
+					cnt -= 1;
 				break;
 			}
+			move++;
 		}
-		
-		
-
-		
 		printf("%d\n", cnt);
 	}
 }
